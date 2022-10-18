@@ -47,13 +47,13 @@ const Newsletter = ({ status, message, onValidated }) => {
           </Col>
           <Col md={6} xl={7}>
             <form onSubmit={handleSubmit}>
-              <Col xl={12} md={12} className="form-email">
+              <Row>
                 <Col
                   className={
                     darkMode ? "new-email-bx newsLetter_dark" : "new-email-bx"
                   }
-                  md={12}
-                  xl={6}
+                  size={12}
+                  sm={6}
                 >
                   <input
                     value={email}
@@ -62,12 +62,12 @@ const Newsletter = ({ status, message, onValidated }) => {
                     placeholder="Email Address"
                   />
                 </Col>
-                <Col md={12} xl={6}>
+                <Col size={12} sm={6}>
                   <button className="new-email-bx-button" type="submit">
                     Submit
                   </button>
                 </Col>
-              </Col>
+              </Row>
             </form>
           </Col>
         </Row>

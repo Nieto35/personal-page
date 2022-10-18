@@ -26,11 +26,11 @@
   z-index: 0;
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.button-email {
-  width: 100% !important;
-}
+
 .new-email-bx::before {
   content: "";
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
@@ -72,6 +72,9 @@
   font-weight: 500;
   letter-spacing: 0.5px;
   border-radius: 18px;
+  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .form-email {
