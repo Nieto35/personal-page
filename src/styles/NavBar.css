@@ -160,3 +160,94 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
+
+.select-language {
+  background-color: transparent;
+}
+
+.select-language .select-language__control {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 0 1px white;
+}
+.select-language .select-language__control:hover {
+  border-color: white;
+}
+
+.select-language
+  .select-language__control
+  .select-language__value-container
+  .select-language__single-value {
+  color: white;
+}
+.select-language .select-language__menu {
+  background-color: #24385b;
+}
+
+.select-language__menu .select-language__menu-list .select-language__option {
+  color: white;
+}
+
+.select-language__menu
+  .select-language__menu-list
+  .select-language__option--is-selected {
+  background-color: #03091e;
+}
+
+.select-language__menu
+  .select-language__menu-list
+  .select-language__option--is-focused {
+  background-color: #05154e;
+}
+
+/* DARK MODE LANGUAGE */
+
+.select-language-dark .select-language-dark__menu {
+  background-color: #151515;
+}
+
+.select-language-dark {
+  background-color: transparent;
+}
+
+.select-language-dark .select-language-dark__control {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 0 1px white;
+}
+.select-language-dark .select-language-dark__control:hover {
+  border-color: white;
+}
+
+.select-language-dark
+  .select-language-dark__control
+  .select-language-dark__value-container
+  .select-language-dark__single-value {
+  color: white;
+}
+
+.select-language-dark__menu
+  .select-language-dark__menu-list
+  .select-language-dark__option {
+  color: white;
+}
+
+.select-language-dark__menu
+  .select-language-dark__menu-list
+  .select-language-dark__option--is-selected {
+  background-color: #03091e;
+}
+
+.select-language-dark__menu
+  .select-language-dark__menu-list
+  .select-language-dark__option--is-focused {
+  background-color: #05154e;
+}
+
+.language-label .col img {
+  height: 24px;
+  width: 24px;
+  margin-top: -5px;
+}

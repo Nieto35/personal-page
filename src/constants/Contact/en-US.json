@@ -1,0 +1,12 @@
+{
+  "contact.Title": "Get In Touch",
+  "contact.Form.firstName": "First Name",
+  "contact.Form.lastName": "Last Name",
+  "contact.Form.email": "Email Address",
+  "contact.Form.phone": "Phone No.",
+  "contact.Form.message": "Message",
+  "contact.Form.button-env": "Send",
+  "contact.Form.button-loading": "Sending...",
+  "contact.Form.answer-success": "Message sent successfully",
+  "contact.Form.answer-failed": "Something went wrong, please try again later."
+}

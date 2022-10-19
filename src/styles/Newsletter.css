@@ -76,9 +76,3 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
-.form-email {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}

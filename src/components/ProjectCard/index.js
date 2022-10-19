@@ -1,6 +1,8 @@
 import React from "react";
+// STYLES
 import { Col } from "react-bootstrap";
 import "@styles/ProjectCard.css";
+// CLOSE STYLES
 
 const ProjectCard = ({ title, description, imgUrl }) => {
   return (

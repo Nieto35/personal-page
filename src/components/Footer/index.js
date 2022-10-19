@@ -1,11 +1,17 @@
 import React from "react";
+// STYLES
 import { Container, Row, Col } from "react-bootstrap";
+import "@styles/Footer.css";
+// CLOSE STYLES
+// COMPONENTS
 import MailchimpForm from "@components/MailchimpForm";
+// CLOSE COMPONENTS
+// IMAGES
 import logo from "@images/logo.svg";
 import navIcon1 from "@images/nav-icon1.svg";
 import navIcon2 from "@images/nav-icon2.svg";
 import navIcon3 from "@images/nav-icon3.svg";
-import "@styles/Footer.css";
+// CLOSE IMAGES
 
 const Footer = () => {
   return (

@@ -1,23 +1,29 @@
 import React from "react";
-import meter1 from "@images/meter1.svg";
-import meter2 from "@images/meter2.svg";
-import meter3 from "@images/meter3.svg";
+// STYLES
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import { Container, Row, Col } from "react-bootstrap";
-
+import "@styles/Skills.css";
+// CLOSE STYLES
+// IMAGES
 import arrow1 from "@images/arrow1.svg";
 import arrow2 from "@images/arrow2.svg";
+import meter1 from "@images/meter1.svg";
+import meter2 from "@images/meter2.svg";
+import meter3 from "@images/meter3.svg";
 import colorSharp from "@images/color-sharp.png";
-
-import "@styles/Skills.css";
-
+// CLOSE IMAGES
 // IMPORT CONTEXT
 import AppContext from "@appContext";
 // CLOSE IMPORT CONTEXT
+// LANGUAGE
+import { IntlProvider, FormattedMessage } from "react-intl";
+import skillsEnglish from "@constants/Skills/en-US.json";
+import skillsSpanish from "@constants/Skills/es-ES.json";
+// CLOSE LANGUAGE
 
 const Skills = () => {
-  const { darkMode } = React.useContext(AppContext);
+  const { darkMode, languages } = React.useContext(AppContext);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -69,52 +75,80 @@ const Skills = () => {
   };
 
   return (
-    <section className="skill" id="skills">
-      <Container className="container">
-        <Row className="row">
-          <Col className="col-12">
-            <div
-              className={
-                darkMode ? "skill-bx-dark wow zoomIn" : "skill-bx wow zoomIn"
-              }
-            >
-              <h2>Skills</h2>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.<br></br> Lorem Ipsum has been the industry's standard
-                dummy text.
-              </p>
-              <Carousel
-                responsive={responsive}
-                arrows
-                infinite={true}
-                className="owl-carousel owl-theme skill-slider"
-                customLeftArrow={<CustomLeftArrow />}
-                customRightArrow={<CustomRightArrow />}
+    <IntlProvider
+      locale={!!languages[0].state ? "es-ES" : "en-EN"}
+      messages={!!languages[0].state ? skillsSpanish : skillsEnglish}
+    >
+      <section className="skill" id="skills">
+        <Container className="container">
+          <Row className="row">
+            <Col className="col-12">
+              <div
+                className={
+                  darkMode ? "skill-bx-dark wow zoomIn" : "skill-bx wow zoomIn"
+                }
               >
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Brand Identity</h5>
-                </div>
-                <div className="item">
-                  <img src={meter3} alt="Image" />
-                  <h5>Logo Design</h5>
-                </div>
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
-              </Carousel>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-      <img className="background-image-left" src={colorSharp} alt="Image" />
-    </section>
+                <h2>
+                  <FormattedMessage id="skills.Title" defaultMessage="Skills" />
+                </h2>
+                <p>
+                  <FormattedMessage
+                    id="skills.Description"
+                    defaultMessage="pondre una descripcion despues"
+                  />
+                </p>
+                <Carousel
+                  responsive={responsive}
+                  arrows
+                  infinite={true}
+                  className="owl-carousel owl-theme skill-slider"
+                  customLeftArrow={<CustomLeftArrow />}
+                  customRightArrow={<CustomRightArrow />}
+                >
+                  <div className="item">
+                    <img src={meter1} alt="Image" />
+                    <h5>
+                      <FormattedMessage
+                        id="skills.item-1"
+                        defaultMessage="React"
+                      />
+                    </h5>
+                  </div>
+                  <div className="item">
+                    <img src={meter2} alt="Image" />
+                    <h5>
+                      <FormattedMessage
+                        id="skills.item-2"
+                        defaultMessage="Webpack"
+                      />
+                    </h5>
+                  </div>
+                  <div className="item">
+                    <img src={meter3} alt="Image" />
+                    <h5>
+                      <FormattedMessage
+                        id="skills.item-3"
+                        defaultMessage="React Router"
+                      />
+                    </h5>
+                  </div>
+                  <div className="item">
+                    <img src={meter1} alt="Image" />
+                    <h5>
+                      <FormattedMessage
+                        id="skills.item-4"
+                        defaultMessage="Library UI"
+                      />
+                    </h5>
+                  </div>
+                </Carousel>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <img className="background-image-left" src={colorSharp} alt="Image" />
+      </section>
+    </IntlProvider>
   );
 };
 

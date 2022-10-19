@@ -1,0 +1,12 @@
+{
+  "contact.Title": "Contactame",
+  "contact.Form.firstName": "Nombre",
+  "contact.Form.lastName": "Apellido",
+  "contact.Form.email": "Correo electronico",
+  "contact.Form.phone": "Telefono",
+  "contact.Form.message": "Mensaje",
+  "contact.Form.button-env": "Enviar",
+  "contact.Form.button-loading": "Enviando...",
+  "contact.Form.answer-success": "Mensaje enviado con éxito",
+  "contact.Form.answer-failed": "Algo salió mal, inténtalo de nuevo más tarde."
+}
