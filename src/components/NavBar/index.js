@@ -12,8 +12,6 @@ import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import Select from "react-select";
 import "@styles/NavBar.css";
 // CLOSE STYLES
-// import { HashLink } from "react-router-hash-link";
-// import { BrowserRouter as Router } from "react-router-dom";
 // IMPORT CONTEXT
 import AppContext from "@appContext";
 // CLOSE IMPORT CONTEXT
@@ -22,6 +20,13 @@ import { IntlProvider, FormattedMessage } from "react-intl";
 import navBarEnglish from "@constants/NavBar/en-US.json";
 import navBarSpanish from "@constants/NavBar/es-ES.json";
 // CLOSE LANGUAGE
+// ROUTER DOM 6
+import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+//CLOSE ROUTER DOM 6
+// WINDOWS
+import { useLocation } from "react-router-dom";
+// CLOSE WINDOWS
 
 const NavBar = () => {
   const {
@@ -52,6 +57,16 @@ const NavBar = () => {
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
   };
+
+  // SCROLL WINDOW
+
+  const location = useLocation().pathname;
+
+  React.useEffect(() => {
+    window.scroll(0, 0);
+  }, [location]);
+
+  // CLOSE SCROLL WINDOW
 
   // LANGUAGE
 
@@ -112,38 +127,46 @@ const NavBar = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link
-                href="#home"
-                className={
-                  activeLink === "home" ? "active navbar-link" : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("home")}
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) {
+                    return "active navbar-link";
+                  } else {
+                    return "navbar-link";
+                  }
+                }}
+                to="/home"
               >
                 <FormattedMessage id="route.Home" defaultMessage="Home" />
-              </Nav.Link>
-              <Nav.Link
-                href="#skills"
-                className={
-                  activeLink === "skills" ? "active navbar-link" : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("skills")}
+              </NavLink>
+
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) {
+                    return "active navbar-link";
+                  } else {
+                    return "navbar-link";
+                  }
+                }}
+                to="/api"
               >
-                <FormattedMessage id="route.Skills" defaultMessage="Skills" />
-              </Nav.Link>
-              <Nav.Link
-                href="#projects"
-                className={
-                  activeLink === "projects"
-                    ? "active navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("projects")}
+                <FormattedMessage id="route.Api" defaultMessage="Api" />
+              </NavLink>
+              <NavLink
+                className={({ isActive }) => {
+                  if (isActive) {
+                    return "active navbar-link";
+                  } else {
+                    return "navbar-link";
+                  }
+                }}
+                to="/404"
               >
                 <FormattedMessage
                   id="route.Projects"
                   defaultMessage="Projects"
                 />
-              </Nav.Link>
+              </NavLink>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
@@ -187,17 +210,16 @@ const NavBar = () => {
                   }
                 ></Select>
               </div>
-              {/* <HashLink to="#connect"> */}
-              <button className="vvd">
-                <span>
-                  <FormattedMessage
-                    id="route.Connect"
-                    defaultMessage="Let’s Connect"
-                  />
-                </span>
-              </button>
-
-              {/* </HashLink> */}
+              <HashLink to="/home/#connect">
+                <button className="vvd">
+                  <span>
+                    <FormattedMessage
+                      id="route.Connect"
+                      defaultMessage="Let’s Connect"
+                    />
+                  </span>
+                </button>
+              </HashLink>
             </span>
           </Navbar.Collapse>
         </Container>

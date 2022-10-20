@@ -4,14 +4,15 @@ import "@styles/App.css";
 
 import AppContext from "@appContext";
 import useInitialState from "@hooks/useInitialState";
-import Home from "@pages/Home";
+import Router from "@router";
 
 const App = () => {
   const initialState = useInitialState();
+
   return (
     <>
       <AppContext.Provider value={initialState}>
-        <Home />
+        <Router />
       </AppContext.Provider>
     </>
   );
