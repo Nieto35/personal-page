@@ -58,7 +58,7 @@
 }
 .new-email-bx input {
   width: 100%;
-  color: #121212;
+  color: #fff;
   font-weight: 500;
   background: transparent;
   border: 0;
@@ -67,7 +67,7 @@
 
 .new-email-bx-button {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
-  padding: 20px 65px;
+  width: 100%;
   color: #fff;
   font-weight: 500;
   letter-spacing: 0.5px;

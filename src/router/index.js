@@ -10,10 +10,11 @@ function Router() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        {/* home */}
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/api" element={<Api />} />
+        <Route path="/api" element={<Api />}>
+          <Route path=":search" element={<Api />} />
+        </Route>
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>

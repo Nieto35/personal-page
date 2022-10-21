@@ -1,12 +1,11 @@
-/************ Banner Css ************/
-.banner {
+.banner-footer {
   margin-top: 0;
-  padding: 150px 0 100px 0;
+  padding: 70px 0 100px 0;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.banner .tagline {
+.banner-footer .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
@@ -20,7 +19,7 @@
   margin-bottom: 16px;
   display: inline-block;
 }
-.banner h1 {
+.banner-footer h1 {
   font-size: 65px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -28,14 +27,14 @@
   margin-bottom: 20px;
   display: block;
 }
-.banner p {
+.banner-footer p {
   color: #b8b8b8;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
 }
-.banner button {
+.banner-footer button {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
@@ -44,29 +43,24 @@
   display: flex;
   align-items: center;
 }
-.banner button svg {
+.banner-footer button svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
-.banner button:hover svg {
+.banner-footer button:hover svg {
   margin-left: 25px;
 }
-.banner img {
+.banner-footer img {
   animation: updown 3s linear infinite;
 }
-@keyframes updown {
-  0% {
-    transform: translateY(-20px);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
+
+.align-items-center {
+  display: flex;
+  justify-content: center;
 }
-.txt-rotate > .wrap {
-  border-right: 0.08em solid #666;
+
+.align-text-center {
+  text-align: center;
 }

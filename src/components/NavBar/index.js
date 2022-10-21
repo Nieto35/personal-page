@@ -38,21 +38,6 @@ const NavBar = () => {
     onEnglish,
   } = React.useContext(AppContext);
   const [activeLink, setActiveLink] = React.useState("home");
-  const [scrolled, setScrolled] = React.useState(false);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
@@ -114,10 +99,7 @@ const NavBar = () => {
       locale={!!languages[0].state ? "es-ES" : "en-EN"}
       messages={!!languages[0].state ? navBarSpanish : navBarEnglish}
     >
-      <Navbar
-        expand="md"
-        className={scrolled ? (darkMode ? "scrolled-dark" : "scrolled") : ""}
-      >
+      <Navbar expand="md" className={darkMode ? "scrolled-dark" : "scrolled"}>
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" />
@@ -210,7 +192,9 @@ const NavBar = () => {
                   }
                 ></Select>
               </div>
-              <HashLink to="/home/#connect">
+              <HashLink
+                to={location === "/home" ? "/#connect" : "/home/#connect"}
+              >
                 <button className="vvd">
                   <span>
                     <FormattedMessage

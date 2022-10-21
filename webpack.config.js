@@ -23,6 +23,7 @@ module.exports = {
       "@appContext": path.resolve(__dirname, "src/context/AppContext"),
       "@pages": path.resolve(__dirname, "src/pages"),
       "@router": path.resolve(__dirname, "src/router"),
+      "@slices": path.resolve(__dirname, "src/slices"),
     },
   },
   module: {
@@ -53,7 +54,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|gif|jpg|svg)$/,
+        test: /\.(png|gif|jpg|svg|jfif)$/,
         use: [
           {
             loader: "file-loader",

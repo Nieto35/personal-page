@@ -1,0 +1,32 @@
+.container-api {
+  margin-top: 0;
+  padding: 250px 0 0px 0;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.content-avatar {
+  height: 50vh;
+}
+
+.content-avatar img {
+  height: 100%;
+}
+
+.dates-avatar p {
+  margin: 0 0 0 0;
+}
+.content-dates-avatar {
+  padding: 80px 0 80px 0;
+}
+
+.content-redes {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .content-avatar {
+    height: 40vh;
+  }
+}

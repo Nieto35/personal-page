@@ -1,12 +1,12 @@
 import React from "react";
-import Banner from "@components/Banner";
-import Footer from "@components/Footer";
+import ContentApi from "@components/ContentApi";
+import FooterSingle from "@components/FooterSingle";
 
 const Api = () => {
   return (
     <>
-      <Banner />
-      <Footer />
+      <ContentApi />
+      <FooterSingle />
     </>
   );
 };

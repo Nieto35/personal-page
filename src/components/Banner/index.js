@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 // STYLES
 import { Container, Row, Col } from "react-bootstrap";
 import "@styles/Banner.css";
@@ -16,6 +16,9 @@ import { IntlProvider, FormattedMessage } from "react-intl";
 import bannerEnglish from "@constants/Banner/en-US.json";
 import bannerSpanish from "@constants/Banner/es-ES.json";
 // CLOSE LANGUAGE
+// ROUTER DOM 6
+import { HashLink } from "react-router-hash-link";
+//CLOSE ROUTER DOM 6
 
 import TrackVisibility from "react-on-screen";
 
@@ -25,7 +28,6 @@ const Banner = () => {
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [text, setText] = React.useState("");
   const [delta, setDelta] = React.useState(300 - Math.random() * 100);
-  const [index, setIndex] = React.useState(1);
   const toRotate = ["Web Junior", "Web Designer", "UI/UX Designer"];
   const period = 2000;
 
@@ -34,6 +36,9 @@ const Banner = () => {
       tick();
       clearInterval(ticker);
     }, delta);
+    return () => {
+      clearInterval(ticker);
+    };
   }, [text, isDeleting]);
 
   const tick = () => {
@@ -51,15 +56,11 @@ const Banner = () => {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setIndex((prevIndex) => prevIndex - 1);
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setIndex(1);
       setDelta(500);
-    } else {
-      setIndex((prevIndex) => prevIndex + 1);
     }
   };
 
@@ -106,13 +107,15 @@ const Banner = () => {
                         defaultMessage="pondre un texto aca despues"
                       />
                     </p>
-                    <button onClick={() => console.log("connect")}>
-                      <FormattedMessage
-                        id="banner.Connect"
-                        defaultMessage="Let’s Connect"
-                      />
-                      <ArrowRightCircle size={25} />
-                    </button>
+                    <HashLink to="/#connect">
+                      <button>
+                        <FormattedMessage
+                          id="banner.Connect"
+                          defaultMessage="Let’s Connect"
+                        />
+                        <ArrowRightCircle size={25} />
+                      </button>
+                    </HashLink>
                   </div>
                 )}
               </TrackVisibility>
