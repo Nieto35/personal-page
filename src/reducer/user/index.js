@@ -1,9 +1,7 @@
 import { SET_USER } from "@actions/types";
-import { SET_LOADING } from "@actions/types";
 
 const initialState = {
   data: {},
-  loading: false,
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -12,11 +10,6 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload,
-      };
-    case SET_LOADING:
-      return {
-        ...state,
-        loading: action.payload,
       };
     default:
       return state;

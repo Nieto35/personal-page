@@ -9,47 +9,42 @@ import AppContext from "@appContext";
 // CLOSE IMPORT CONTEXT
 
 // ROUTER DOM 6
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 //CLOSE ROUTER DOM 6
-import getGithubUsers from "@services/Users";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
-import { useDispatch, useSelector } from "react-redux";
-
-import { setDataUser, setLoading } from "@actions/action";
+import { fetchDataWithDetails } from "@slices/dataSlice";
 
 import AvatarApi from "@components/AvatarApi";
 import DataApi from "@components/DataApi";
 import SocialApi from "@components/SocialApi";
 import SearchApi from "@components/SearchApi";
 const ContentApi = () => {
-  const user = useSelector((state) => state.data);
-  const loading = useSelector((state) => state.loading);
-  const dispatch = useDispatch();
+  const location = useLocation();
+  const user = useSelector((state) => state.data, shallowEqual);
+  // const loading = useSelector((state) => state.loading.loading);
+  const loadig = false;
   const { darkMode, languages } = React.useContext(AppContext);
   const [searchInput, setSearchInput] = React.useState("");
   const navigate = useNavigate();
   const { search } = useParams();
 
-  const buttonNavigate = () => {
+  const buttonNavigate = (event) => {
+    event.preventDefault();
     navigate(searchInput);
   };
 
+  const dispatch = useDispatch();
   React.useEffect(() => {
-    const gettinUser = async (user) => {
-      dispatch(setLoading(true));
-      const userRes = await getGithubUsers(user);
-      dispatch(setDataUser(userRes));
-      dispatch(setLoading(false));
-    };
-
     if (search) {
       setSearchInput(search);
-      gettinUser(search);
+      dispatch(fetchDataWithDetails(search));
     } else {
-      gettinUser("octocat");
+      dispatch(fetchDataWithDetails("octocat"));
     }
-  }, []);
+  }, [location]);
+
   return (
     <section className="skill" id="api">
       <Container className="container-api">

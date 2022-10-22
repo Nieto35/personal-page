@@ -31,7 +31,7 @@ const SearchApi = (props) => {
         >
           <Row>
             <Col md={12} xl={12}>
-              <form onSubmit={buttonNavigate}>
+              <form onSubmit={(event) => buttonNavigate(event)}>
                 <Row className="justify-content-center">
                   <Col
                     className={

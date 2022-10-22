@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const AvatarApi = () => {
-  const user = useSelector((state) => state.data);
+  const user = useSelector((state) => state.data.data);
   return (
     <Col xs={12} md={6} xl={4}>
       <div className="content-avatar">

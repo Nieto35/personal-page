@@ -14,7 +14,7 @@ import { BriefcaseFill } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 
 const SocialApi = () => {
-  const user = useSelector((state) => state.data);
+  const user = useSelector((state) => state.data.data);
   return (
     <Col
       xs={12}
