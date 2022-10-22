@@ -16,7 +16,7 @@ module.exports = {
       "@styles": path.resolve(__dirname, "src/styles"),
       "@components": path.resolve(__dirname, "src/components"),
       "@constants": path.resolve(__dirname, "src/constants"),
-      "@container": path.resolve(__dirname, "src/container"),
+      "@actions": path.resolve(__dirname, "src/actions"),
       "@images": path.resolve(__dirname, "src/assets/images"),
       "@fonts": path.resolve(__dirname, "src/assets/font"),
       "@hooks": path.resolve(__dirname, "src/hooks"),
@@ -24,6 +24,9 @@ module.exports = {
       "@pages": path.resolve(__dirname, "src/pages"),
       "@router": path.resolve(__dirname, "src/router"),
       "@slices": path.resolve(__dirname, "src/slices"),
+      "@services": path.resolve(__dirname, "src/services"),
+      "@reducer": path.resolve(__dirname, "src/reducer"),
+      "@middlewares": path.resolve(__dirname, "src/middlewares"),
     },
   },
   module: {

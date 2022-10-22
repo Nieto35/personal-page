@@ -8,18 +8,21 @@ import "@styles/ContentApi.css";
 import avatar from "@images/avatar.png";
 import { useParams } from "react-router-dom";
 // CLOSE IMAGES
+import { useSelector } from "react-redux";
 
 const AvatarApi = () => {
-  const { search } = useParams();
-  console.log(search);
+  const user = useSelector((state) => state.data);
   return (
     <Col xs={12} md={6} xl={4}>
       <div className="content-avatar">
-        <Image src={avatar} roundedCircle />
+        <Image
+          src={user.login == "octocat" ? avatar : user.avatar_url}
+          roundedCircle
+        />
       </div>
       <div>
-        <h2>The Octocat</h2>
-        <span>@Octocat</span>
+        <h2>{user.name ? user.name : "Not available"}</h2>
+        <span>@{user.login}</span>
       </div>
     </Col>
   );

@@ -10,8 +10,10 @@ import { ArchiveFill } from "react-bootstrap-icons";
 import { PersonWorkspace } from "react-bootstrap-icons";
 import { PersonBadgeFill } from "react-bootstrap-icons";
 // CLOSE ICONS
+import { useSelector } from "react-redux";
 
 const DataApi = () => {
+  const user = useSelector((state) => state.data);
   return (
     <Col
       xs={12}
@@ -35,7 +37,7 @@ const DataApi = () => {
             </Col>
             <Col className="dates-avatar" xl={5}>
               <p>Repository</p>
-              <span>8</span>
+              <span>{user.public_repos}</span>
             </Col>
           </Row>
         </Col>
@@ -46,7 +48,7 @@ const DataApi = () => {
             </Col>
             <Col className="dates-avatar" xl={5}>
               <p>Followers</p>
-              <span>5241</span>
+              <span>{user.followers}</span>
             </Col>
           </Row>
         </Col>
@@ -57,7 +59,7 @@ const DataApi = () => {
             </Col>
             <Col className="dates-avatar" xl={5}>
               <p>Following</p>
-              <span>9</span>
+              <span>{user.following}</span>
             </Col>
           </Row>
         </Col>

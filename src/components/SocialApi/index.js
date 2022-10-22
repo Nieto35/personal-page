@@ -11,8 +11,10 @@ import { GeoAltFill } from "react-bootstrap-icons";
 import { Twitter } from "react-bootstrap-icons";
 import { BriefcaseFill } from "react-bootstrap-icons";
 // CLOSE ICONS
+import { useSelector } from "react-redux";
 
 const SocialApi = () => {
+  const user = useSelector((state) => state.data);
   return (
     <Col
       xs={12}
@@ -27,7 +29,7 @@ const SocialApi = () => {
               <Github size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <a>https://github.blog</a>
+              <a>{user.blog ? user.blog : "Not available"}</a>
             </Col>
           </Row>
         </Col>
@@ -37,7 +39,7 @@ const SocialApi = () => {
               <GeoAltFill size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <p>San francisco</p>
+              <p>{user.location ? user.location : "Not available"}</p>
             </Col>
           </Row>
         </Col>
@@ -47,7 +49,11 @@ const SocialApi = () => {
               <Twitter size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <p>Not Available</p>
+              <p>
+                {user.twitter_username
+                  ? user.twitter_username
+                  : "Not available"}
+              </p>
             </Col>
           </Row>
         </Col>
@@ -57,7 +63,7 @@ const SocialApi = () => {
               <BriefcaseFill size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <p>@Github</p>
+              <p>{user.company ? user.company : "Not available"}</p>
             </Col>
           </Row>
         </Col>

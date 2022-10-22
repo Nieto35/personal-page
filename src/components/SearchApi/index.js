@@ -11,27 +11,10 @@ import { IntlProvider, FormattedMessage } from "react-intl";
 import newsletterEnglish from "@constants/Newsletter/en-US.json";
 import newsletterSpanish from "@constants/Newsletter/es-ES.json";
 // CLOSE LANGUAGE
-// ROUTER DOM 6
-import { HashLink } from "react-router-hash-link";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-//CLOSE ROUTER DOM 6
 
-const SearchApi = () => {
+const SearchApi = (props) => {
+  const { searchInput, setSearchInput, buttonNavigate } = props;
   const { darkMode, languages } = React.useContext(AppContext);
-  const [searchInput, setSearchInput] = React.useState("");
-  const navigate = useNavigate();
-  const { search } = useParams();
-
-  const buttonNavigate = () => {
-    navigate(searchInput);
-  };
-
-  React.useEffect(() => {
-    if (search) {
-      setSearchInput(search);
-    }
-  }, []);
 
   return (
     <IntlProvider

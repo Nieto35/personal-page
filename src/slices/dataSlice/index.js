@@ -1,17 +1,7 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import avatar from "@images/avatar.png";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  avatar: { avatar },
-  apiName: "The Octocat",
-  alias: "@Octocat",
-  repository: "8",
-  followers: "5241",
-  following: "9",
-  urlGit: "https://github.blog",
-  location: "San francisco",
-  twitter: "Not Available",
-  work: "@Github",
+  data: {},
 };
 
 export const dataSlice = createSlice({
@@ -19,11 +9,10 @@ export const dataSlice = createSlice({
   initialState,
   reducers: {
     setData: (state, action) => {
-      state.alias = action.payload;
+      state.data = action.payload;
     },
   },
 });
 
 export const { setData } = dataSlice.actions;
-console.log(dataSlice);
 export default dataSlice.reducer;
