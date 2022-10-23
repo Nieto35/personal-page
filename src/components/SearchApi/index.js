@@ -8,8 +8,8 @@ import AppContext from "@appContext";
 // CLOSE IMPORT CONTEXT
 // LANGUAGE
 import { IntlProvider, FormattedMessage } from "react-intl";
-import newsletterEnglish from "@constants/Newsletter/en-US.json";
-import newsletterSpanish from "@constants/Newsletter/es-ES.json";
+import searchApiEnglish from "@constants/SearchApi/en-US.json";
+import searchApiSpanish from "@constants/SearchApi/es-ES.json";
 // CLOSE LANGUAGE
 
 const SearchApi = (props) => {
@@ -19,7 +19,7 @@ const SearchApi = (props) => {
   return (
     <IntlProvider
       locale={!!languages[0].state ? "es-ES" : "en-EN"}
-      messages={!!languages[0].state ? newsletterSpanish : newsletterEnglish}
+      messages={!!languages[0].state ? searchApiSpanish : searchApiEnglish}
     >
       <Col lg={12}>
         <div
@@ -43,16 +43,28 @@ const SearchApi = (props) => {
                     xs={12}
                     md={12}
                   >
-                    <input
-                      type="text"
-                      value={searchInput}
-                      placeholder="BUSCAR"
-                      onChange={(event) => setSearchInput(event.target.value)}
-                    />
+                    <FormattedMessage
+                      id="SearchApi.placeholder"
+                      defaultMessage="SEARCH"
+                    >
+                      {(placeholder) => (
+                        <input
+                          type="text"
+                          value={searchInput}
+                          placeholder={placeholder}
+                          onChange={(event) =>
+                            setSearchInput(event.target.value)
+                          }
+                        />
+                      )}
+                    </FormattedMessage>
                   </Col>
                   <Col xl={3} xs={12}>
                     <button className="new-email-bx-button" type="submit">
-                      SEND
+                      <FormattedMessage
+                        id="SearchApi.button"
+                        defaultMessage="SEARCH"
+                      />
                     </button>
                   </Col>
                 </Row>

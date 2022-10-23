@@ -13,8 +13,16 @@ import { BriefcaseFill } from "react-bootstrap-icons";
 // CLOSE ICONS
 import { useSelector } from "react-redux";
 
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+// IMPORT CONTEXT
+import AppContext from "@appContext";
+// CLOSE IMPORT CONTEXT
+
 const SocialApi = () => {
+  const { darkMode, languages } = React.useContext(AppContext);
   const user = useSelector((state) => state.data.data);
+  const loading = useSelector((state) => state.loading.loading);
   return (
     <Col
       xs={12}
@@ -29,7 +37,17 @@ const SocialApi = () => {
               <Github size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <a>{user.blog ? user.blog : "Not available"}</a>
+              {loading ? (
+                <Skeleton
+                  className={
+                    darkMode
+                      ? "created_at-loading-dark "
+                      : "created_at-loading "
+                  }
+                />
+              ) : (
+                <a>{user.blog ? user.blog : "Not available"}</a>
+              )}
             </Col>
           </Row>
         </Col>
@@ -39,7 +57,17 @@ const SocialApi = () => {
               <GeoAltFill size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <p>{user.location ? user.location : "Not available"}</p>
+              {loading ? (
+                <Skeleton
+                  className={
+                    darkMode
+                      ? "created_at-loading-dark "
+                      : "created_at-loading "
+                  }
+                />
+              ) : (
+                <p>{user.location ? user.location : "Not available"}</p>
+              )}
             </Col>
           </Row>
         </Col>
@@ -49,11 +77,21 @@ const SocialApi = () => {
               <Twitter size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <p>
-                {user.twitter_username
-                  ? user.twitter_username
-                  : "Not available"}
-              </p>
+              {loading ? (
+                <Skeleton
+                  className={
+                    darkMode
+                      ? "created_at-loading-dark "
+                      : "created_at-loading "
+                  }
+                />
+              ) : (
+                <p>
+                  {user.twitter_username
+                    ? user.twitter_username
+                    : "Not available"}
+                </p>
+              )}
             </Col>
           </Row>
         </Col>
@@ -63,7 +101,17 @@ const SocialApi = () => {
               <BriefcaseFill size={30} />
             </Col>
             <Col className="dates-avatar" xl={5}>
-              <p>{user.company ? user.company : "Not available"}</p>
+              {loading ? (
+                <Skeleton
+                  className={
+                    darkMode
+                      ? "created_at-loading-dark "
+                      : "created_at-loading "
+                  }
+                />
+              ) : (
+                <p>{user.company ? user.company : "Not available"}</p>
+              )}
             </Col>
           </Row>
         </Col>

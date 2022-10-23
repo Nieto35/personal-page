@@ -1,0 +1,5 @@
+{
+  "dataApi.Repository": "Repository",
+  "dataApi.Followers": "Followers",
+  "dataApi.Following": "Following"
+}

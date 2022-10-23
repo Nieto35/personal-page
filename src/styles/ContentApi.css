@@ -24,6 +24,20 @@
 .content-redes {
   margin-top: 1rem;
 }
+span .created_at-loading {
+  --base-color: #121f3d;
+  --highlight-color: #24385b;
+}
+
+span .created_at-loading-dark {
+  --base-color: rgb(18, 18, 18);
+  --highlight-color: #1b1b1b;
+}
+
+span .circle {
+  border-radius: 50%;
+  height: 90%;
+}
 
 @media (max-width: 768px) {
   .content-avatar {

@@ -15,6 +15,8 @@ import { useParams } from "react-router-dom";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 import { fetchDataWithDetails } from "@slices/dataSlice";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import AvatarApi from "@components/AvatarApi";
 import DataApi from "@components/DataApi";
@@ -22,9 +24,8 @@ import SocialApi from "@components/SocialApi";
 import SearchApi from "@components/SearchApi";
 const ContentApi = () => {
   const location = useLocation();
-  const user = useSelector((state) => state.data, shallowEqual);
-  // const loading = useSelector((state) => state.loading.loading);
-  const loadig = false;
+  const user = useSelector((state) => state.data.data, shallowEqual);
+  const loading = useSelector((state) => state.loading.loading);
   const { darkMode, languages } = React.useContext(AppContext);
   const [searchInput, setSearchInput] = React.useState("");
   const navigate = useNavigate();
@@ -43,7 +44,13 @@ const ContentApi = () => {
     } else {
       dispatch(fetchDataWithDetails("octocat"));
     }
-  }, [location]);
+  }, [location, darkMode, languages]);
+
+  React.useEffect(() => {
+    if (user.page === "page404") {
+      navigate("/404");
+    }
+  }, [user]);
 
   return (
     <section className="skill" id="api">
@@ -67,7 +74,15 @@ const ContentApi = () => {
               </Row>
             </Col>
             <Col xs={12} md={12} xl={12}>
-              <h3>{user.created_at}</h3>
+              {loading ? (
+                <Skeleton
+                  className={
+                    darkMode ? "created_at-loading-dark" : "created_at-loading"
+                  }
+                />
+              ) : (
+                <h3>{user.created_at}</h3>
+              )}
             </Col>
           </Col>
         </Row>
