@@ -1,0 +1,11 @@
+{
+  "docApi.Title": "¿Como usar la API?",
+  "docApi.tab-1": "Dentro de la plataforma gitHub, después de haber iniciado sesión",
+  "docApi.tab-1.2": "Puedes ver en negrita el nombre de usuario por el cual puedes buscar en la api",
+  "docApi.tab-2": "Puedes buscar los perfiles de otras personas desde gitHub",
+  "docApi.tab-2.2": "Después de encontrarlo, copie el nombre de usuario",
+  "docApi.tab-2.3": "En este caso, parzibyte",
+  "docApi.tab-3": "El buscador funciona con la ruta dinámica.",
+  "docApi.tab-3.1": "Como puedes ver la ruta (/nieto35), esto hará que el buscador también cambie.",
+  "docApi.tab-3.2": "Si la API no encuentra ningún resultado, obtendrá un error 404."
+}

@@ -142,7 +142,7 @@ const NavBar = () => {
                     return "navbar-link";
                   }
                 }}
-                to="/404"
+                to="/documentation"
               >
                 <FormattedMessage
                   id="route.Projects"

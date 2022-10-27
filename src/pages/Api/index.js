@@ -1,6 +1,7 @@
 import React from "react";
 import ContentApi from "@components/ContentApi";
 import FooterSingle from "@components/FooterSingle";
+import DocApi from "@components/DocApi";
 import { Provider } from "react-redux";
 import {
   applyMiddleware,
@@ -22,6 +23,7 @@ const Api = () => {
     <>
       <Provider store={store}>
         <ContentApi />
+        <DocApi />
         <FooterSingle />
       </Provider>
     </>

@@ -1,0 +1,11 @@
+{
+  "docApi.Title": "How to use the API?",
+  "docApi.tab-1": "Within the gitHub platform, after you have logged in",
+  "docApi.tab-1.2": "You can see in bold the username by which you can search in the api",
+  "docApi.tab-2": "You can search other people's profiles from gitHub",
+  "docApi.tab-2.2": "After you find it, copy the username",
+  "docApi.tab-2.3": "In this case, parzibyte",
+  "docApi.tab-3": "The search engine works with the dynamic route.",
+  "docApi.tab-3.1": "As you can see the path (/nieto35), this will cause the browser to change as well.",
+  "docApi.tab-3.2": "If the API doesn't find any results, you'll get a 404 error."
+}

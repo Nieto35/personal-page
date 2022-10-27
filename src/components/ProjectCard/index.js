@@ -5,6 +5,7 @@ import "@styles/ProjectCard.css";
 // CLOSE STYLES
 
 const ProjectCard = ({ title, description, imgUrl }) => {
+  console.log("title", title);
   return (
     <Col size={12} sm={6} md={4}>
       <div className="proj-imgbx">

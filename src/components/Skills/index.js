@@ -91,12 +91,7 @@ const Skills = () => {
                 <h2>
                   <FormattedMessage id="skills.Title" defaultMessage="Skills" />
                 </h2>
-                <p>
-                  <FormattedMessage
-                    id="skills.Description"
-                    defaultMessage="pondre una descripcion despues"
-                  />
-                </p>
+                <br></br>
                 <Carousel
                   responsive={responsive}
                   arrows

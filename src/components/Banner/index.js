@@ -28,7 +28,11 @@ const Banner = () => {
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [text, setText] = React.useState("");
   const [delta, setDelta] = React.useState(300 - Math.random() * 100);
-  const toRotate = ["Web Junior", "Web Designer", "UI/UX Designer"];
+  const toRotate = [
+    "Web Developer Junior",
+    "Web Designer Junior",
+    "UI/UX Designer Junior",
+  ];
   const period = 2000;
 
   React.useEffect(() => {

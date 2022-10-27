@@ -4,6 +4,7 @@ import NavBar from "@components/NavBar";
 import Home from "@pages/Home";
 import Api from "@pages/Api";
 import Page404 from "@pages/404";
+import Documentation from "@pages/Documentation";
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
         <Route path="/api" element={<Api />}>
           <Route path=":search" element={<Api />} />
         </Route>
+        <Route path="/documentation" element={<Documentation />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>

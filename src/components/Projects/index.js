@@ -8,9 +8,22 @@ import "@styles/Projects.css";
 import ProjectCard from "@components/ProjectCard";
 // CLOSE COMPONENTS
 // IMAGES
-import projImg1 from "@images/project-img1.png";
-import projImg2 from "@images/project-img2.png";
-import projImg3 from "@images/project-img3.png";
+import diplomaReact from "@images/titles/diploma-react.jpg";
+import diplomaWebpack from "@images/titles/diploma-webpack.jpg";
+import diplomaReactPractico from "@images/titles/diploma-react-practico.jpg";
+import diplomaReactEstado from "@images/titles/diploma-react-estado.jpg";
+import diplomaReactPatronesRender from "@images/titles/diploma-react-patrones-render.jpg";
+import diplomaReactRouter from "@images/titles/diploma-react-router.jpg";
+
+import diplomaReactReduxProfesional from "@images/titles/diploma-react-redux-profesional.jpg";
+import diplomaJest from "@images/titles/diploma-jest.jpg";
+import diplomaReactStateMachines from "@images/titles/diploma-react-state-machines.jpg";
+import diplomaMaterialUi from "@images/titles/diploma-material-ui.jpg";
+import diplomaReactHooks from "@images/titles/diploma-react-hooks.jpg";
+
+import actaSena from "@images/titles/actaSena.jpg";
+import senasoft from "@images/titles/senasoft.jpg";
+
 import colorSharp2 from "@images/color-sharp2.png";
 // CLOSE IMAGES
 import TrackVisibility from "react-on-screen";
@@ -30,32 +43,73 @@ const Projects = () => {
     {
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: diplomaReact,
     },
     {
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg2,
+      imgUrl: diplomaWebpack,
     },
     {
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: diplomaReactPractico,
     },
     {
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: diplomaReactEstado,
     },
     {
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg2,
+      imgUrl: diplomaReactPatronesRender,
     },
     {
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: diplomaReactRouter,
+    },
+  ];
+
+  const titles = [
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: diplomaReactReduxProfesional,
+    },
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: diplomaJest,
+    },
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: diplomaReactStateMachines,
+    },
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: diplomaMaterialUi,
+    },
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: diplomaReactHooks,
+    },
+  ];
+
+  const titles2 = [
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: actaSena,
+    },
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: senasoft,
     },
   ];
 
@@ -81,12 +135,7 @@ const Projects = () => {
                         defaultMessage="Projects"
                       />
                     </h2>
-                    <p>
-                      <FormattedMessage
-                        id="projects.Description"
-                        defaultMessage="debo poner un texto aca"
-                      />
-                    </p>
+                    <br></br>
                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
                       <Nav
                         variant="pills"
@@ -119,20 +168,18 @@ const Projects = () => {
                           </Row>
                         </Tab.Pane>
                         <Tab.Pane eventKey="second">
-                          <p>
-                            <FormattedMessage
-                              id="projects.tab-2"
-                              defaultMessage="debo poner un texto aca"
-                            />
-                          </p>
+                          <Row>
+                            {titles.map((title, index) => {
+                              return <ProjectCard key={index} {...title} />;
+                            })}
+                          </Row>
                         </Tab.Pane>
                         <Tab.Pane eventKey="third">
-                          <p>
-                            <FormattedMessage
-                              id="projects.tab-3"
-                              defaultMessage="debo poner un texto aca"
-                            />
-                          </p>
+                          <Row>
+                            {titles2.map((title, index) => {
+                              return <ProjectCard key={index} {...title} />;
+                            })}
+                          </Row>
                         </Tab.Pane>
                       </Tab.Content>
                     </Tab.Container>
