@@ -7,7 +7,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "./bundle.js",
     publicPath: "/",
   },
   resolve: {
@@ -61,7 +61,7 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            options: { name: "assets/[hash].[ext]" },
+            options: { name: "./assets/[hash].[ext]" },
           },
         ],
       },
