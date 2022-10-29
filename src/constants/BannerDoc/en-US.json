@@ -1,0 +1,11 @@
+{
+  "BannerDoc.Title": "How is this page programmed?",
+  "BannerDoc.Title.1": "How do I use React Redux?",
+  "BannerDoc.Title.2": "What other libraries do I use?",
+  "BannerDoc.subTitle": "What dependencies are installed?",
+  "BannerDoc.subTitle.1": "What development dependencies are installed?",
+  "BannerDoc.subTitle.2": "folder structure",
+  "BannerDoc.p.1": "In the Slices there is logic and actions.",
+  "BannerDoc.p.2": "In this, the SLICES are combined, so the logic is kept separate, but the components are used from the same file.",
+  "BannerDoc.p.3": "The middleware is used to perform an action between the server request and the front end arrival. The following image shows the configuration with the extension."
+}

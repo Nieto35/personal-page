@@ -1,0 +1,11 @@
+{
+  "BannerDoc.Title": "¿Cómo se programa esta página?",
+  "BannerDoc.Title.1": "¿Cómo uso React Redux?",
+  "BannerDoc.Title.2": "¿Qué otras bibliotecas uso?",
+  "BannerDoc.subTitle": "¿Qué dependencias están instaladas?",
+  "BannerDoc.subTitle.1": "¿Qué dependencias de desarrollo están instaladas?",
+  "BannerDoc.subTitle.2": "estructura de carpetas",
+  "BannerDoc.p.1": "En los Slices está la lógica y las acciones.",
+  "BannerDoc.p.2": "En esto, los SLICES se combinan, por lo que la lógica se mantiene separada, pero los componentes se utilizan desde el mismo archivo.",
+  "BannerDoc.p.3": "El middleware se utiliza para realizar una acción entre la solicitud del servidor y la llegada al frente. La siguiente imagen muestra la configuración con la extensión."
+}
