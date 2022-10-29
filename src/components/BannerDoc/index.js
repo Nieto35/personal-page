@@ -8,7 +8,7 @@ import "@styles/Projects.css";
 import middleware from "@images/middleware.png";
 import rootReducer from "@images/rootReducer.png";
 import slices from "@images/Slices.png";
-import slices2 from "@images/slices-2.png";
+import slices2 from "@images/Slices2.png";
 import folder from "@images/folder.png";
 import devdependencies from "@images/devdependencies.png";
 import dependencias from "@images/dependencias.png";
