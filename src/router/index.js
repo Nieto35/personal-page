@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import NavBar from "@components/NavBar";
 import Home from "@pages/Home";
 import Api from "@pages/Api";
@@ -8,7 +8,7 @@ import Documentation from "@pages/Documentation";
 
 function Router() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <NavBar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
@@ -19,7 +19,7 @@ function Router() {
         <Route path="/documentation" element={<Documentation />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
