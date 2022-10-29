@@ -8,7 +8,7 @@ import Documentation from "@pages/Documentation";
 
 function Router() {
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
@@ -19,7 +19,7 @@ function Router() {
         <Route path="/documentation" element={<Documentation />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
