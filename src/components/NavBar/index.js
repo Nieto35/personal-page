@@ -1,6 +1,6 @@
 import React from "react";
 // IMAGES
-import logo from "@images/logo.svg";
+import logo from "@images/logo.png";
 import navIcon1 from "@images/nav-icon1.svg";
 import navIcon2 from "@images/moon.svg";
 import navIcon3 from "@images/sol.svg";
